@@ -1,0 +1,11 @@
+{
+  "name": "mastering-nuxt",
+  "dependencies": {
+    "nuxt": "^2.15.8"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  }
+}
