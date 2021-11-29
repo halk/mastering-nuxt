@@ -20,6 +20,7 @@ module.exports = {
     'vue',
   ],
   rules: {
+    'no-underscore-dangle': 'off',
     'vue/multi-word-component-names': 'off',
     'import/extensions': [
       'error',
