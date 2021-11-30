@@ -17,5 +17,8 @@ export default {
   },
   plugins: [
     '~/plugins/maps.client'
-  ]
+  ],
+  publicRuntimeConfig: {
+    googleApiKey: process.env.GOOGLE_API_KEY
+  }
 };
