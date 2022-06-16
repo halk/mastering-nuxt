@@ -16,7 +16,8 @@ export default {
     prefetchLinks: false
   },
   plugins: [
-    '~/plugins/maps.client'
+    '~/plugins/maps.client',
+    '~/plugins/dataApi'
   ],
   publicRuntimeConfig: {
     googleApiKey: process.env.GOOGLE_API_KEY
