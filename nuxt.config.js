@@ -19,10 +19,19 @@ export default {
     '~/plugins/maps.client',
     '~/plugins/dataApi',
   ],
+  modules: [],
   buildModules: [
     '@nuxtjs/tailwindcss',
   ],
   publicRuntimeConfig: {
     googleApiKey: process.env.GOOGLE_API_KEY
-  }
+  },
+  css: ['~/assets/sass/app.scss'],
+  build: {
+    extractCSS: true,
+    loaders: {
+      limit: 0,
+    }
+  },
+  devServerHandlers: [],
 };

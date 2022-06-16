@@ -1,27 +1,12 @@
 <template>
-<div>
-  <div style="display: flex;">
-    <img v-for="image in home.images" :key="image" :src="image" width="200" height="150"/>
+  <div class="app-container">
+    <property-gallery :images="home.images"/>
+    <property-details :home="home"/>
+    <property-description :home="home"/>
+    <property-map :home="home"/>
+    <property-reviews :reviews="reviews"/>
+    <property-host :user="user"/>
   </div>
-  {{ home.title }}<br/>
-  ${{ home.pricePerNight }} / night<br/>
-  <img src="/images/marker.svg" width="20" height="20"/>{{ home.location.address }} {{ home.location.city }} {{ home.location.state }} {{ home.location.country }}<br />
-  <img src="/images/star.svg" width="20" height="20"/>{{ home.reviewValue }}<br/>
-  {{ home.guests }} guests, {{ home.bedrooms }} rooms, {{ home.beds }} beds, {{ home.bathrooms }} baths<br/>
-  <p>{{ home.description }}</p>
-  <div style="height:800px;width:800px" ref="map"></div>
-  <div v-for="review in reviews" :key="review.objectId">
-    <img :src="review.reviewer.image" /><br/>
-    {{ review.reviewer.name }}<br/>
-    {{ formatDate(review.date) }}<br/>
-    <ShortText :text="review.comment" :target="150"/><br/>
-  </div>
-  <img :src="user.image"/>
-  {{ user.name }}<br/>
-  {{ formatDate(user.joined) }}<br/>
-  {{ user.reviewCount }}<br/>
-  {{ user.description }}
-</div>
 </template>
 
 <script>
@@ -52,17 +37,6 @@ export default {
     return {
       title: this.home.title
     };
-  },
-  mounted() {
-    this.$maps.showMap(this.$refs.map, this.home._geoloc.lat, this.home._geoloc.lng);
-  },
-  methods: {
-    formatDate(dateStr) {
-      const date = new Date(dateStr);
-
-      return date.toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
-
-    }
   }
 };
 </script>
