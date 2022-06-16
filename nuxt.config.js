@@ -17,7 +17,10 @@ export default {
   },
   plugins: [
     '~/plugins/maps.client',
-    '~/plugins/dataApi'
+    '~/plugins/dataApi',
+  ],
+  buildModules: [
+    '@nuxtjs/tailwindcss',
   ],
   publicRuntimeConfig: {
     googleApiKey: process.env.GOOGLE_API_KEY
