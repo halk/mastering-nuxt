@@ -14,7 +14,7 @@
     <img :src="review.reviewer.image" /><br/>
     {{ review.reviewer.name }}<br/>
     {{ formatDate(review.date) }}<br/>
-    <short-text :text="review.comment" :target="150"/><br/>
+    <ShortText :text="review.comment" :target="150"/><br/>
   </div>
   <img :src="user.image"/>
   {{ user.name }}<br/>
